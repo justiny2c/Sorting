@@ -19,13 +19,17 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    for i in range(len(arr)): 
-        for element in range(0, len(arr)-1): #element => 0 , 1 ,2 3, 4,5 ,6, 7
-            print(arr)
+    # for _ in range(len(arr)):
+    swap = True
+    while swap:
+        swap = False
+        for element in range(0, len(arr)-1):
             if arr[element] > arr[element+1]:
-                x = arr[element+1]
-                arr[element+1] = arr[element]
-                arr[element] = x
+                # x = arr[element+1]
+                # arr[element+1] = arr[element]
+                # arr[element] = x
+                arr[element], arr[element+1] = arr[element+1], arr[element]
+                swap = True
 
     return arr
 
@@ -35,3 +39,20 @@ def bubble_sort(arr):
 def count_sort(arr, maximum=-1):
 
     return arr
+
+
+def quicksort(items):
+    if len(items) <= 1:
+        return items
+    # 1. Select last element as the pivot
+    pivot = items[-1]
+    left = []
+    right = []
+    for i in range(len(items)-1)
+      item = items[i]
+       if item < pivot:  # 2. Move all elements smaller than the pivot to the left
+            left.append(item)
+        else:
+            right.append(item)  # 3. Move all elements larget than the pivot to the right
+    # 4. While LHS and RHS are greater than 1, repeats steps 1-3 on each
+    return quicksort(left) + [pivot] + quicksort(right)
